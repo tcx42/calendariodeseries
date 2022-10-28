@@ -1,0 +1,51 @@
+.calendar-table {
+    background-color: black;
+    color: azure;
+}
+
+.calendar-show-title {
+    color: lightgreen
+}
+
+.calendar-episode-name {
+    color: azure;
+}
+
+.calendar-cell-content {
+    text-align: left;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.calendar-cell-content ul {
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+
+.calendar-cell {
+    text-align: left;
+}
+
+.calendar-cell p {
+    background-color: #282c34;
+    color: aliceblue;
+}
+
+.calendar-cell p {
+    margin: 0;
+    padding: 0.3rem;
+}
+
+@media screen and (orientation: landscape) {
+    .calendar-table {
+        display: grid;
+        width: 100%;
+    }
+
+    .calendar-row {
+        display: grid;
+        grid-template-columns: repeat(7, calc(100%/7));
+        width: 100%;
+    }
+}
