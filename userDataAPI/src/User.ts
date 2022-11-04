@@ -1,7 +1,8 @@
+import { createHash } from 'crypto';
 export default class User {
     private name: string;
     private email: string;
-    private password: string;
+    private hashedPassword: string;
     private movies: {
         movieId: number,
         watched: boolean
@@ -20,7 +21,7 @@ export default class User {
     constructor(name: string, email: string, password: string, movies: User['movies'] = [], shows: User['shows'] = []) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.hashedPassword = this.hashPassword(password);
         this.movies = movies;
         this.shows = shows;
     }
@@ -31,7 +32,10 @@ export default class User {
         return this.email;
     }
     validatePassword(password: string) {
-        return this.password === password;
+        return this.hashedPassword === this.hashPassword(password);
+    }
+    private hashPassword(password: string) {
+        return createHash('sha256').update(password).digest('base64');
     }
     addMovie(movieId: number) {
         if (!this.movies.some(movie => movie.movieId === movieId)) {

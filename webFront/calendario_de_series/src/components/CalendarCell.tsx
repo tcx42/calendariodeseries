@@ -31,18 +31,3 @@ export default function CalendarCell(props: Props) {
         </div>
     )
 }
-                // {props.tvshows?.map((show, i) =>
-                //     (!show || !show.episodes || show.episodes?.length < 1) ? <></> :
-                //         <ul key={show.showName}>
-                //             <li key={i} className="calendar-show-title">
-                //                 {show.showName}
-                //                 {show.episodes?.map((episode, j) =>
-                //                     <ul key={episode.episodeName}>
-                //                         <li key={j} className="calendar-episode-name">
-                //                             {`${episode.episodeName} - s${episode.seasonNumber}e${episode.episodeNumber}`}
-                //                         </li>
-                //                     </ul>
-                //                 )}
-                //             </li>
-                //         </ul>
-                // )}

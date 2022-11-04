@@ -1,15 +1,15 @@
 import express from "express";
 import config from "./config";
 import login from "./controllers/login";
-import signIn from "./controllers/signIn";
+import register from "./controllers/register";
 import { apiErrorHandler } from "./errorHandling/apiErrorHandler";
-import { loginReqSchema, signInReqSchema, validateDto } from "./validation/dto";
+import { loginReqSchema, registerReqSchema, validateDto } from "./validation/dto";
 
 const app = express();
 const router = express.Router();
 
 router.get('/login', validateDto(loginReqSchema), login);
-router.post('/signin', validateDto(signInReqSchema), signIn);
+router.post('/signin', validateDto(registerReqSchema), register);
 
 app.use(express.json());
 app.use(router);

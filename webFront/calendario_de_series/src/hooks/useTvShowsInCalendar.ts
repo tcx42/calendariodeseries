@@ -17,8 +17,8 @@ export default function (tvShowsIds: number[], calendarArray: Date[]) {
 
 function tmdbStringDateToDate(date: string | undefined): Date {
     if (date) {
-        const d: number[] = date.split('-').map(s => Number(s));
-        return new Date(d[0], d[1] - 1, d[2]);
+        const [year, month, day] = date.split('-').map(s => Number(s));
+        return new Date(year, month - 1, day);
     }
     return new Date(1900, 0, 0);
 }
